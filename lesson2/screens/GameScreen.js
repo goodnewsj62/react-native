@@ -24,7 +24,7 @@ const GameScreen = ({ userNumber }) => {
     const [currentGuess, setCurrentGruess] = useState(initialGuess);
 
     function nextGuestHandler(direction) {
-        if (direction === 'lower') {
+        if (direction === 'lower' && currentGuess < userNumber5) {
             maxBoundary = currentGuess;
 
         } else {
@@ -32,6 +32,7 @@ const GameScreen = ({ userNumber }) => {
         }
         const newRandNumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess);
     }
+
 
     return (
         <View style={styles.screen}>
